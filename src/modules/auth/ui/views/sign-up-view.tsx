@@ -133,8 +133,16 @@ export const SignUpView = () => {
                                     <span className="bg-card text-muted-foreground relative z-10 px-2">Or sign up with</span>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <Button disabled={pending} variant="outline" type="button" className="w-full"> <img src="/google.svg" alt="Image" className="h-[25px] w-[25px]" />Google</Button>
-                                    <Button disabled={pending} variant="outline" type="button" className="w-full"> <img src="/github.svg" alt="Image" className="h-[25px] w-[25px]" /> Github</Button>
+                                    <Button disabled={pending} onClick={() => {
+                                        authClient.signIn.social({
+                                            provider: "google",
+                                        })
+                                    }}  variant="outline" type="button" className="w-full"> <img src="/google.svg" alt="Image" className="h-[25px] w-[25px]" />Google</Button>
+                                    <Button disabled={pending} onClick={() => {
+                                        authClient.signIn.social({
+                                            provider: "github",
+                                        })
+                                    }} variant="outline" type="button" className="w-full"> <img src="/github.svg" alt="Image" className="h-[25px] w-[25px]" /> Github</Button>
                                 </div>
                                 <div className="text-center text-sm">
                                     Already have an account?{" "} <Link href="/sign-in" className="underline underline-offset-1"> Sign In </Link>
