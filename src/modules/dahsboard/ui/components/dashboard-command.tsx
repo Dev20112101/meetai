@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 
 interface Props {
     open: boolean;
-    setOpen: Dispatch<SetStateAction<boolean>>;     
+    setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 export const DashboardCommand = ({ open, setOpen }: Props) => {
